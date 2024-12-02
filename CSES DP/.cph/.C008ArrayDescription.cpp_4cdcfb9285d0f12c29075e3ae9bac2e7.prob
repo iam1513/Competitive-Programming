@@ -1,0 +1,1 @@
+{"name":"Local: C008ArrayDescription","url":"c:\\Users\\Om\\CODE\\CP\\CSES DP\\C008ArrayDescription.cpp","tests":[{"id":1732370417180,"input":"10 3\n3 0 0 3 0 0 0 0 2 0","output":"348"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Om\\CODE\\CP\\CSES DP\\C008ArrayDescription.cpp","group":"local","local":true}

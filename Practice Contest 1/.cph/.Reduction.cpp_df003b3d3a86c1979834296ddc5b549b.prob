@@ -1,0 +1,1 @@
+{"name":"Local: Reduction","url":"c:\\Users\\Om\\CODE\\CP\\Practice Contest 1\\Reduction.cpp","tests":[{"id":1731161211448,"input":"3\n2 1\n1 2\n2 1\n2 2\n3 1\n2 3 2\n","output":"3\n2\n5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Om\\CODE\\CP\\Practice Contest 1\\Reduction.cpp","group":"local","local":true}
