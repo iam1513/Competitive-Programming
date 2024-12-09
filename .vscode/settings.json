@@ -5,6 +5,7 @@
         "thread": "cpp",
         "random": "cpp",
         "iosfwd": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "cmath": "cpp"
     }
 }

@@ -1,0 +1,1 @@
+{"name":"Local: C02PaintAStrip","url":"c:\\Users\\Om\\CODE\\CP\\CF Contest\\Div 2\\992\\C02PaintAStrip.cpp","tests":[{"id":1733726644847,"input":"4\n1\n2\n4\n20\n","output":"1\n2\n2\n4\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Om\\CODE\\CP\\CF Contest\\Div 2\\992\\C02PaintAStrip.cpp","group":"local","local":true}
