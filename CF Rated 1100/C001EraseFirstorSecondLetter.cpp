@@ -1,31 +1,37 @@
 #include <bits/stdc++.h>
+
 #define ll long long
-using namespace std;
+#define pll pair<ll, ll>
+#define vll vector<ll>
+#define mll map<ll, ll>
+#define sl set<ll>
+#define sc set<char>
 
-set<string> s;
-unordered_set<string> visited;
+#define pb push_back
 
-void recom(const string &st)
+#define MOD 1000000007
+#define PI 3.1415926535897932384626433832795
+
+ll gcd(ll a, ll b)
 {
-
-    if (st.empty() || visited.count(st))
-        return;
-
-    visited.insert(st);
-    s.insert(st);
-
-    if (!st.empty())
-    {
-        string temp1 = st.substr(1);
-        recom(temp1);
-    }
-
-    if (st.size() > 1)
-    {
-        string temp2 = st[0] + st.substr(2);
-        recom(temp2);
-    }
+    if (b == 0)
+        return a;
+    return gcd(b, a % b);
 }
+
+ll lcm(ll a, ll b) { return a / gcd(a, b) * b; }
+
+bool prime(ll a)
+{
+    if (a == 1)
+        return 0;
+    for (int i = 2; i <= round(sqrt(a)); ++i)
+        if (a % i == 0)
+            return 0;
+    return 1;
+}
+
+using namespace std;
 
 int main()
 {
@@ -36,18 +42,25 @@ int main()
     cin >> t;
 
     while (t--)
+
     {
         ll n;
         cin >> n;
+        string s;
+        cin >> s;
+        set<char> st;
+        ll ans = 0;
 
-        string st;
-        cin >> st;
+        for (ll i = 0; i < n; i++)
+        {
+            if (st.find(s[i]) == st.end())
+            {
+                ans += (n - i);
+                st.insert(s[i]);
+            }
+        }
 
-        recom(st);
-
-        cout << s.size() << endl;
-        s.clear();
-        visited.clear();
+        cout << ans << endl;
     }
 
     return 0;
