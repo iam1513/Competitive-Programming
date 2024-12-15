@@ -1,0 +1,1 @@
+{"name":"Local: C05","url":"c:\\Users\\Om\\CODE\\CP\\CF Contest\\Div 4\\993\\C05.cpp","tests":[{"id":1734280280333,"input":"3\n2 2 6 2 12\n3 5 7 15 63\n15 17 78 2596 20914861\n","output":"12\n6\n197\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Om\\CODE\\CP\\CF Contest\\Div 4\\993\\C05.cpp","group":"local","local":true}
