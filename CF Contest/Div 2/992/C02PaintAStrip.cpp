@@ -47,26 +47,15 @@ int main()
         ll n;
         cin >> n;
 
-        vector<ll> cnt(1e5 + 1);
-        cnt[1] = 1;
+        ll curr = 1, ans = 1;
 
-        ll x = 1;
-        ll j = 2;
-        for (ll i = 2; i < 1e9; i++)
+        while (curr < n)
         {
-            x = x * 2 + 2;
-            while (j <= x && j < 1e5)
-            {
-                cnt[j] = i;
-                j++;
-            }
-            if (x > 1e5)
-            {
-                break;
-            }
+            curr = curr * 2 + 2;
+            ans++;
         }
 
-        cout << cnt[n] << endl;
+        cout << ans  << endl;
     }
 
     return 0;
