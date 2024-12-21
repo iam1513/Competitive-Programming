@@ -1,0 +1,1 @@
+{"name":"Local: C022KillDemodogs","url":"c:\\Users\\Om\\CODE\\CP\\CF Rated 1100\\C022KillDemodogs.cpp","tests":[{"id":1734796450595,"input":"4\n2\n3\n50\n1000000000\n","output":"14154\n44484\n171010650\n999589541"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Om\\CODE\\CP\\CF Rated 1100\\C022KillDemodogs.cpp","group":"local","local":true}
