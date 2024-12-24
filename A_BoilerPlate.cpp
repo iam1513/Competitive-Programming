@@ -21,22 +21,6 @@ ll gcd(ll a, ll b)
 
 ll lcm(ll a, ll b) { return a / gcd(a, b) * b; }
 
-string to_upper(string a)
-{
-	for (int i = 0; i < (int)a.size(); ++i)
-		if (a[i] >= 'a' && a[i] <= 'z')
-			a[i] -= 'a' - 'A';
-	return a;
-}
-
-string to_lower(string a)
-{
-	for (int i = 0; i < (int)a.size(); ++i)
-		if (a[i] >= 'A' && a[i] <= 'Z')
-			a[i] += 'a' - 'A';
-	return a;
-}
-
 bool prime(ll a)
 {
 	if (a == 1)
@@ -49,6 +33,18 @@ bool prime(ll a)
 
 using namespace std;
 
+bool check(ll x, vll &a, vll &b, ll k)
+{
+	ll cnt = 0;
+
+	for (ll i = 0; i < a.size(); i++)
+	{
+		cnt += upper_bound(b.begin(), b.end(), x - a[i]) - b.begin();
+	}
+
+	return cnt >= k;
+}
+
 int main()
 {
 	ios::sync_with_stdio(false);
@@ -59,6 +55,49 @@ int main()
 
 	while (t--)
 	{
+		ll n, m, k;
+		cin >> n >> m >> k;
+
+		vll a(n), b(m);
+
+		for (ll i = 0; i < n; i++)
+		{
+			cin >> a[i];
+		}
+
+		for (ll i = 0; i < m; i++)
+		{
+			cin >> b[i];
+		}
+
+		sort(a.begin(), a.end());
+		sort(b.begin(), b.end());
+
+		if (n > m)
+		{
+			swap(n, m);
+			swap(a, b);
+		}
+
+		ll lo = a[0] + b[0], hi = a[n - 1] + b[m - 1];
+		ll ans = -1;
+
+		while (lo <= hi)
+		{
+			ll mid = (lo + hi) / 2;
+
+			if (check(mid, a, b, k))
+			{
+				ans = mid;
+				hi = mid - 1;
+			}
+			else
+			{
+				lo = mid + 1;
+			}
+		}
+
+		cout << ans << endl;
 	}
 
 	return 0;

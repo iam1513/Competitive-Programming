@@ -1,0 +1,1 @@
+{"name":"Local: C002_D2_190A","url":"c:\\Users\\Om\\CODE\\CP\\Random CF\\C002_D2_190A.cpp","tests":[{"id":1735016712765,"input":"3\nGARAGE\nGARAGEFORSALE\nABCDE\nAABCD\nTRAINING\nDRAINING\n","output":"14\n10\n16\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Om\\CODE\\CP\\Random CF\\C002_D2_190A.cpp","group":"local","local":true}
