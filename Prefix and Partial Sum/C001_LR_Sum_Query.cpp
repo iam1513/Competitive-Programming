@@ -48,10 +48,10 @@ int main()
     }
 
     vll ps(n);
-    ps[0] = nums[0] % MOD + MOD;
+    ps[0] = (nums[0] % MOD + MOD) % MOD;
     for (ll i = 1; i < n; i++)
     {
-        ps[i] = (nums[i] % MOD + MOD + ps[i - 1]) % MOD;
+        ps[i] = (nums[i] % MOD + MOD + ps[i - 1] % MOD + MOD) % MOD;
     }
 
     while (q--)
@@ -59,7 +59,7 @@ int main()
         ll s, e;
         cin >> s >> e;
 
-        s == 1 ? cout << (ps[e - 1] - 0 + MOD) % MOD << endl : cout << (ps[e - 1] - ps[s - 2] + MOD) % MOD << endl;
+        s == 1 ? cout << (ps[e - 1] % MOD + MOD) % MOD << endl : cout << (ps[e - 1] % MOD + MOD - ps[s - 2] % MOD + MOD) % MOD << endl;
     }
 
     return 0;
