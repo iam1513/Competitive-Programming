@@ -33,15 +33,15 @@ bool prime(ll a)
 
 using namespace std;
 
-bool check(ll maxSeparation, vll &points, ll k)
+bool check(ll x, vll &nums, ll k)
 {
-    ll needed = 0;
-    for (ll i = 1; i < points.size(); i++)
+    ll cnt = 0;
+    for (ll i = 1; i < nums.size(); i++)
     {
-        ll gap = points[i] - points[i - 1];
-        needed += (gap - 1) / maxSeparation; 
-        if (needed > k)
-            return false; 
+        ll diff = nums[i] - nums[i - 1];
+        cnt += (diff - 1) / x;
+        if (cnt > k)
+            return false;
     }
     return true;
 }
