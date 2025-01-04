@@ -1,0 +1,1 @@
+{"name":"Local: C004_D1D2_C","url":"c:\\Users\\Om\\CODE\\CP\\Random CF\\C004_D1D2_C.cpp","tests":[{"id":1735955814589,"input":"4\n3\n1 1 2\n2\n3 1\n1\n9\n5\n7 4 4 3 2\n","output":"4\n3\n9\n7\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Om\\CODE\\CP\\Random CF\\C004_D1D2_C.cpp","group":"local","local":true}
