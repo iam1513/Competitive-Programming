@@ -33,17 +33,16 @@ bool prime(ll a)
 
 using namespace std;
 
-ll check(vll &nums, ll n, ll h, ll mid)
+ll check(ll mid)
 {
-    ll sum = 0;
+    ll ans = 0;
 
-    for (ll i = 0; i < n - 1; i++)
+    for (ll i = 2; i * i * i <= mid; i++)
     {
-        sum += min(nums[i + 1] - nums[i], mid);
+        ans += mid / (i * i * i);
     }
-    sum += mid;
 
-    return sum;
+    return ans;
 }
 
 int main()
@@ -51,40 +50,32 @@ int main()
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    ll t;
-    cin >> t;
+    ll n;
+    cin >> n;
 
-    while (t--)
+    ll lo = 0, hi = 1e18;
+    ll ans = -1;
+
+    while (lo <= hi)
     {
-        ll n, h;
-        cin >> n >> h;
+        ll mid = lo + (hi - lo) / 2;
+        ll num = check(mid);
 
-        vll nums(n);
-
-        for (ll i = 0; i < n; i++)
+        if (num == n)
         {
-            cin >> nums[i];
+            ans = mid;
         }
-
-        ll lo = 0, hi = h;
-        ll ans = 0;
-        while (lo <= hi)
+        if (num >= n)
         {
-            ll mid = lo + (hi - lo) / 2;
-
-            if (check(nums, n, h, mid)>=h)
-            {
-                ans = mid;
-                hi = mid - 1;
-            }
-            else
-            {
-                lo = mid + 1;
-            }
+            hi = mid - 1;
         }
-
-        cout << ans << endl;
+        else
+        {
+            lo = mid + 1;
+        }
     }
+
+    cout << ans << endl;
 
     return 0;
 }
