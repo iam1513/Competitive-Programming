@@ -33,12 +33,53 @@ bool prime(ll a)
 
 using namespace std;
 
+void solve(int n, vll &nums)
+{
+    for (ll i = 0; i < n - 2; i++)
+    {
+        if (nums[i] < 0)
+        {
+            cout << "NO" << endl;
+            return;
+        }
+
+        ll op = nums[i];
+        nums[i] -= op;
+        nums[i + 1] -= 2 * op;
+        nums[i + 2] -= op;
+    }
+
+    if (nums[n - 1] != 0 || nums[n - 2] != 0)
+    {
+        cout << "NO" << endl;
+    }
+    else
+    {
+        cout << "YES" << endl;
+    }
+}
+
 int main()
 {
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    cout << '26' - '0' << endl;
+    ll t;
+    cin >> t;
+
+    while (t--)
+    {
+        ll n;
+        cin >> n;
+
+        vll nums(n);
+        for (ll i = 0; i < n; i++)
+        {
+            cin >> nums[i];
+        }
+
+        solve(n, nums);
+    }
 
     return 0;
 }
