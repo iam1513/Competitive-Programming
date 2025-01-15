@@ -1,0 +1,1 @@
+{"name":"Local: C013_EduD2_173_B","url":"c:\\Users\\Om\\CODE\\CP\\Random CF\\C013_EduD2_173_B.cpp","tests":[{"id":1736929818331,"input":"3\n2 6\n7 1\n8 5\n","output":"1 3 \n1 3 7 9 \n1 3 5 7 9 \n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Om\\CODE\\CP\\Random CF\\C013_EduD2_173_B.cpp","group":"local","local":true}
