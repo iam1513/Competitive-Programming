@@ -57,13 +57,14 @@ int main()
         bool flag = false;
         while (i < n && j < n)
         {
-            if (nums[i] + abs(k) == nums[j])
+            ll diff = nums[j] - nums[i];
+            if (diff == k)
             {
                 flag = true;
                 break;
             }
 
-            else if (nums[i] + abs(k) < nums[j])
+            else if (diff > k)
                 ++i;
             else
                 ++j;
