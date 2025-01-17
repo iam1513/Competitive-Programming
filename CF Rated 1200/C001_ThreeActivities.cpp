@@ -69,6 +69,7 @@ int main()
         sort(a.rbegin(), a.rend());
         sort(b.rbegin(), b.rend());
         sort(c.rbegin(), c.rend());
+
         // for (ll i = 0; i < 3; i++)
         // {
         //     cout << a[i].second << " " << a[i].first << endl;
