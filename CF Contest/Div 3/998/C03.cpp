@@ -43,22 +43,36 @@ int main()
 
     while (t--)
     {
-        ll n, x, y;
-        cin >> n >> x >> y;
+        ll n, k;
+        cin >> n >> k;
 
-        ll x_can_get = n / x;
-        ll y_can_get = n / y;
-        ll x_and_y = n / (lcm(x, y));
+        vll nums(n, 0);
+        for (ll i = 0; i < n; i++)
+        {
+            cin >> nums[i];
+        }
 
-        x_can_get -= x_and_y;
-        y_can_get -= x_and_y;
+        sort(nums.begin(), nums.end());
 
         ll ans = 0;
-        ll total_sum = (n) * (n + 1) / 2;
-        ll to_add = total_sum - (n - x_can_get) * (n - x_can_get + 1) / 2;
-        ll to_sub = (y_can_get) * (y_can_get + 1) / 2;
+        ll i = 0, j = n - 1;
 
-        ans = to_add - to_sub;
+        while (i < j)
+        {
+            if (nums[i] + nums[j] == k)
+            {
+                ans++;
+                i++, j--;
+            }
+            else if (nums[i] + nums[j] > k)
+            {
+                j--;
+            }
+            else
+            {
+                i++;
+            }
+        }
 
         cout << ans << endl;
     }

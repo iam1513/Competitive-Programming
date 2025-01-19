@@ -43,24 +43,30 @@ int main()
 
     while (t--)
     {
-        ll n, x, y;
-        cin >> n >> x >> y;
+        ll a, b, c, d;
+        cin >> a >> b >> c >> d;
 
-        ll x_can_get = n / x;
-        ll y_can_get = n / y;
-        ll x_and_y = n / (lcm(x, y));
+        ll maxi = 0;
+        for (ll i = -100000; i < 100000; i++)
+        {
+            ll cnt = 0;
+            if (a + b == i)
+            {
+                cnt++;
+            }
+            if (b + i == c)
+            {
+                cnt++;
+            }
+            if (i + c == d)
+            {
+                cnt++;
+            }
 
-        x_can_get -= x_and_y;
-        y_can_get -= x_and_y;
+            maxi = max(cnt, maxi);
+        }
 
-        ll ans = 0;
-        ll total_sum = (n) * (n + 1) / 2;
-        ll to_add = total_sum - (n - x_can_get) * (n - x_can_get + 1) / 2;
-        ll to_sub = (y_can_get) * (y_can_get + 1) / 2;
-
-        ans = to_add - to_sub;
-
-        cout << ans << endl;
+        cout << maxi << endl;
     }
 
     return 0;
