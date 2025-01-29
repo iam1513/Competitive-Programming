@@ -59,6 +59,8 @@ int main()
         vll lst(n + 1);
         mp[0] = 0;
 
+        cout << mp[2] << endl;
+
         for (ll i = 1; i <= n; i++)
         {
             ps[i] = ps[i - 1] + nums[i];
@@ -84,11 +86,11 @@ int main()
             }
         }
 
-        for (ll i = 1; i <= n; i++)
-        {
-            cout << ps[i] << " ";
-        }
-        cout << endl;
+        // for (ll i = 1; i <= n; i++)
+        // {
+        //     cout << ps[i] << " ";
+        // }
+        // cout << endl;
 
         for (ll i = 1; i <= n; i++)
         {
@@ -96,17 +98,17 @@ int main()
         }
         cout << endl;
 
-        for (auto m : mp)
-        {
-            cout << m.first << " " << m.second << " + ";
-        }
-        cout << endl;
+        // for (auto m : mp)
+        // {
+        //     cout << m.first << " " << m.second << " + ";
+        // }
+        // cout << endl;
 
-        for (ll i = 1; i <= n; i++)
-        {
-            cout << dp[i] << " ";
-        }
-        cout << endl;
+        // for (ll i = 1; i <= n; i++)
+        // {
+        //     cout << dp[i] << " ";
+        // }
+        // cout << endl;
 
         cout << *max_element(dp.begin(), dp.end()) << endl;
     }
