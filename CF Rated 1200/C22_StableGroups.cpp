@@ -38,39 +38,45 @@ int main()
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    ll t;
-    cin >> t;
+    ll n, k, x;
+    cin >> n >> k >> x;
 
-    while (t--)
+    vll nums(n);
+    for (ll i = 0; i < n; i++)
     {
-        ll n;
-        cin >> n;
-
-        vll nums(n + 1);
-        for (ll i = 1; i <= n; i++)
-        {
-            cin >> nums[i];
-        }
-
-        ll ans = 0;
-
-        for (ll i = 1; i <= n; i++)
-        {
-            ll prod = nums[i];
-            for (ll j = prod - i; j <= n; j += prod)
-            {
-                if (j >= 0)
-                {
-                    if (prod * nums[j] == i + j && i < j)
-                    {
-                        ans++;
-                    }
-                }
-            }
-        }
-
-        cout << ans << endl;
+        cin >> nums[i];
     }
+
+    sort(nums.begin(), nums.end());
+
+    ll ans = 1;
+
+    vll gaps;
+
+    for (ll i = 0; i < n - 1; i++)
+    {
+        if (nums[i + 1] - nums[i] > x)
+        {
+            gaps.push_back(nums[i + 1] - nums[i]);
+        }
+    }
+
+    sort(gaps.begin(), gaps.end());
+
+    for (ll i = 0; i < gaps.size(); i++)
+    {
+        ll need = ((gaps[i] - 1) / x);
+        if (need <= k)
+        {
+            k -= need;
+        }
+        else
+        {
+            ans++;
+        }
+    }
+
+    cout << ans << endl;
 
     return 0;
 }
