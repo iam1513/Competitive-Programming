@@ -1,0 +1,1 @@
+{"name":"Local: C020_GrasshopperOnTheLine","url":"c:\\Users\\Om\\CODE\\CP\\CF Rated 800\\C020_GrasshopperOnTheLine.cpp","tests":[{"id":1739095144870,"input":"3\n10 2\n10 3\n3 4\n","output":"2\n7 3\n1\n10\n1\n3\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Om\\CODE\\CP\\CF Rated 800\\C020_GrasshopperOnTheLine.cpp","group":"local","local":true}
