@@ -15,24 +15,18 @@ int main()
         ll n;
         cin >> n;
 
-        ll ans = LLONG_MAX;
-        ll one = 0, two = 0;
+        ll a = 1;
 
-        for (ll a = 1; a <= n / 2; a++)
+        for (ll i = 2; i * i <= n; i++)
         {
-            ll b = n - a;
-            ll gcd = __gcd(a, b);
-            ll lcm = (a * b) / gcd;
-
-            if (lcm < ans)
+            if (n % i == 0)
             {
-                ans = lcm;
-                one = a;
-                two = b;
+                a = n / i;
+                break;
             }
         }
 
-        cout << one << " " << two << endl;
+        cout << a << " " << n - a << endl;
     }
 
     return 0;
