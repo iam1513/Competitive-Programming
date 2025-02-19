@@ -1,0 +1,1 @@
+{"name":"Local: C005_MakeitAlternating","url":"c:\\Users\\Om\\CODE\\CP\\CF Rated 1300\\C005_MakeitAlternating.cpp","tests":[{"id":1739932663270,"input":"3\n10010\n111\n0101\n","output":"1 2\n2 6\n0 1\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Om\\CODE\\CP\\CF Rated 1300\\C005_MakeitAlternating.cpp","group":"local","local":true}
