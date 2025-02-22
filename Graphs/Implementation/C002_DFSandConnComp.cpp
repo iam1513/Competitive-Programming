@@ -33,10 +33,61 @@ bool prime(ll a)
 
 using namespace std;
 
-class bfs
+class Graph
 {
 public:
-    list<int> ls;
+    ll v;
+    list<ll> *adj;
+    Graph(ll n)
+    {
+        this->v = n;
+        this->adj = new list<ll>[this->v];
+    }
+
+    void addEgde(ll u, ll v, bool bidir = true)
+    {
+        adj[u].push_back(v);
+        if (bidir)
+        {
+            adj[v].push_back(u);
+        }
+    }
+
+    void dfsHelper(ll src, unordered_map<ll, bool> &visited)
+    {
+        visited[src] = true;
+        // cout << src << " ";
+        for (auto neighbour : this->adj[src])
+        {
+            if (not visited[neighbour])
+            {
+                dfsHelper(neighbour, visited);
+            }
+        }
+    }
+
+    void dfs(ll src)
+    {
+        unordered_map<ll, bool> visited;
+        dfsHelper(src, visited);
+    }
+
+    ll connectedComp()
+    {
+        unordered_map<ll, bool> visited;
+        ll result = 0;
+
+        for (ll i = 0; i < v; i++)
+        {
+            if (not visited[i])
+            {
+                dfsHelper(i, visited);
+                result++;
+            }
+        }
+
+        return result;
+    }
 };
 
 int main()
@@ -44,12 +95,13 @@ int main()
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    ll t;
-    cin >> t;
+    Graph g(6);
+    g.addEgde(0, 1);
+    g.addEgde(2, 1);
+    g.addEgde(3, 2);
+    g.addEgde(4, 5);
 
-    while (t--)
-    {
-    }
+    cout << g.connectedComp() << endl;
 
     return 0;
 }
