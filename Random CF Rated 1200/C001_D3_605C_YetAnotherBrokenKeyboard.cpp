@@ -51,12 +51,6 @@ int main()
         cin >> ch;
         mp[ch]++;
     }
-    ll num = 2 * 1e5 + 10;
-    vll dp(num, 0);
-    for (ll i = 0; i < num; i++)
-    {
-        dp[i] = ((i * (i + 1)) / 2);
-    }
 
     ll i = 0, j = 0;
     ll cnt = 0;
@@ -68,7 +62,8 @@ int main()
             // cout << j << " ";
             cnt = j - i;
             i = j + 1;
-            ans += dp[cnt];
+            ll sum = ((cnt * (cnt + 1)) / 2);
+            ans += sum;
         }
         j++;
     }
@@ -78,7 +73,7 @@ int main()
     // cout << cnt << " ";
     cnt = j - i;
     // cout << cnt << " ";
-    ans += dp[cnt];
+    ans += ((cnt * (cnt + 1)) / 2);
 
     cout << ans << endl;
 
