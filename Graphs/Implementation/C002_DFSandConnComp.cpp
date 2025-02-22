@@ -53,6 +53,19 @@ public:
         }
     }
 
+    void printGraph()
+    {
+        for (ll i = 0; i < v; i++)
+        {
+            cout << i << " -> ";
+            for (auto neighbor : adj[i])
+            {
+                cout << neighbor << " ";
+            }
+            cout << endl;
+        }
+    }
+
     void dfsHelper(ll src, unordered_map<ll, bool> &visited)
     {
         visited[src] = true;
@@ -100,6 +113,7 @@ int main()
     g.addEgde(2, 1);
     g.addEgde(3, 2);
     g.addEgde(4, 5);
+    g.printGraph();
 
     cout << g.connectedComp() << endl;
 
