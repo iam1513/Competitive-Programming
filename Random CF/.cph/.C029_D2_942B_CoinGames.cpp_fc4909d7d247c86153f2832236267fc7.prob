@@ -1,0 +1,1 @@
+{"name":"Local: C029_D2_942B_CoinGames","url":"c:\\Users\\Om\\CODE\\CP\\Random CF\\C029_D2_942B_CoinGames.cpp","tests":[{"id":1740799541376,"input":"3\n5\nUUDUD\n5\nUDDUD\n2\nUU\n","output":"YES\nNO\nNO\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Om\\CODE\\CP\\Random CF\\C029_D2_942B_CoinGames.cpp","group":"local","local":true}
