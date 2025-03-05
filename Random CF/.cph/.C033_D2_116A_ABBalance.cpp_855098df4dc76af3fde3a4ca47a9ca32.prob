@@ -1,0 +1,1 @@
+{"name":"Local: C033_D2_116A_ABBalance","url":"c:\\Users\\Om\\CODE\\CP\\Random CF\\C033_D2_116A_ABBalance.cpp","tests":[{"id":1741151822073,"input":"4\nb\naabbbabaa\nabbb\nabbaab\n","output":"b\naabbbabaa\nbbbb\nabbaaa"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Om\\CODE\\CP\\Random CF\\C033_D2_116A_ABBalance.cpp","group":"local","local":true}
