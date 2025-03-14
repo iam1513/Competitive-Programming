@@ -1,0 +1,1 @@
+{"name":"Local: C039_Football","url":"c:\\Users\\Om\\CODE\\CP\\Random CF\\C039_Football.cpp","tests":[{"id":1741840965083,"input":"001001\n","output":"NO"},{"id":1741840978666,"input":"1000000001\n","output":"YES"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Om\\CODE\\CP\\Random CF\\C039_Football.cpp","group":"local","local":true}
