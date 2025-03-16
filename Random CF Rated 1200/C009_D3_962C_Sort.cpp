@@ -54,14 +54,22 @@ int main()
 
         for (ll i = 0; i < n; i++)
         {
+            pre1[i + 1][st1[i] - 'a']++;
+
             for (ll j = 0; j < 26; j++)
             {
-                pre1[i + 1][j] = pre1[i][j];
-                pre2[i + 1][j] = pre2[i][j];
+                pre1[i + 1][j] += pre1[i][j];
             }
+        }
 
-            pre1[i + 1][st1[i] - 'a']++;
+        for (ll i = 0; i < n; i++)
+        {
             pre2[i + 1][st2[i] - 'a']++;
+
+            for (ll j = 0; j < 26; j++)
+            {
+                pre2[i + 1][j] += pre2[i][j];
+            }
         }
 
         while (q--)
