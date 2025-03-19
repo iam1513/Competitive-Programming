@@ -1,0 +1,1 @@
+{"name":"Local: C044_Fence","url":"c:\\Users\\Om\\CODE\\CP\\Random CF\\C044_Fence.cpp","tests":[{"id":1742421217764,"input":"2\n1 2 3\n12 34 56\n","output":"4\n42\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Om\\CODE\\CP\\Random CF\\C044_Fence.cpp","group":"local","local":true}
