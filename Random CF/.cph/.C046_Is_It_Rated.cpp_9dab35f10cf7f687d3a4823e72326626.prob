@@ -1,0 +1,1 @@
+{"name":"Local: C046_Is_It_Rated","url":"c:\\Users\\Om\\CODE\\CP\\Random CF\\C046_Is_It_Rated.cpp","tests":[{"id":1742619978306,"input":"6\n3060 3060\n2194 2194\n2876 2903\n2624 2624\n3007 2991\n2884 2884\n","output":"rated"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Om\\CODE\\CP\\Random CF\\C046_Is_It_Rated.cpp","group":"local","local":true}
