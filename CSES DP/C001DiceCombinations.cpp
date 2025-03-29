@@ -85,6 +85,36 @@ bool prime(ll a)
 
 using namespace std;
 
+ll recom(ll n, vector<ll> &dp)
+{
+    if (n == 0)
+    {
+        return 1;
+    }
+
+    if (dp[n] != -1)
+    {
+        return dp[n];
+    }
+
+    int ans = 0;
+
+    if (n - 1 >= 0)
+        ans = (ans + recom(n - 1, dp)) % MOD;
+    if (n - 2 >= 0)
+        ans = (ans + recom(n - 2, dp)) % MOD;
+    if (n - 3 >= 0)
+        ans = (ans + recom(n - 3, dp)) % MOD;
+    if (n - 4 >= 0)
+        ans = (ans + recom(n - 4, dp)) % MOD;
+    if (n - 5 >= 0)
+        ans = (ans + recom(n - 5, dp)) % MOD;
+    if (n - 6 >= 0)
+        ans = (ans + recom(n - 6, dp)) % MOD;
+
+    return dp[n] = ans;
+}
+
 int main()
 {
     ios::sync_with_stdio(false);
@@ -92,8 +122,25 @@ int main()
 
     ll n;
     cin >> n;
-    
-    
+    vector<ll> dp(n + 5, 0);
+    // cout << recom(n, dp) << endl;
+
+    // Tabulation
+
+    dp[0] = 1;
+
+    for (ll i = 1; i <= n; i++)
+    {
+        for (ll j = 1; j <= 6; j++)
+        {
+            if (i - j >= 0)
+            {
+                dp[i] = (dp[i] + dp[i - j]) % MOD;
+            }
+        }
+    }
+
+    cout << dp[n] << endl;
 
     return 0;
 }
