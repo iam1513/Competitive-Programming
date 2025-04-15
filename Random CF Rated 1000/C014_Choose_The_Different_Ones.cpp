@@ -48,15 +48,14 @@ int main()
 
         vll a(n), b(m);
         ll k1, k2;
-        vll cnt(k + 1, 0);
-        sl s1, s2;
+        sl s1, s2, s;
         for (ll i = 0; i < n; i++)
         {
             cin >> a[i];
             if (a[i] <= k)
             {
                 s1.insert(a[i]);
-                cnt[a[i]]++;
+                s.insert(a[i]);
             }
         }
 
@@ -66,24 +65,13 @@ int main()
             if (b[i] <= k)
             {
                 s2.insert(b[i]);
-                cnt[b[i]]++;
+                s.insert(b[i]);
             }
         }
 
         k1 = s1.size(), k2 = s2.size();
 
-        bool flag = true;
-
-        for (ll i = 1; i <= k; i++)
-        {
-            if (cnt[i] == 0)
-            {
-                flag = false;
-                break;
-            }
-        }
-
-        if (flag && k1 >= k / 2 && k2 >= k / 2)
+        if (s.size() == k && k1 >= k / 2 && k2 >= k / 2)
         {
             cout << "YES\n";
         }
