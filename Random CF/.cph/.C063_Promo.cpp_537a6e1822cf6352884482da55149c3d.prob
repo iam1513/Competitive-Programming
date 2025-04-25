@@ -1,0 +1,1 @@
+{"name":"Local: C063_Promo","url":"c:\\Users\\Om\\CODE\\CP\\Random CF\\C063_Promo.cpp","tests":[{"id":1745578121458,"input":"5 3\n5 3 1 5 2\n3 2\n1 1\n5 3\n","output":"8\n5\n6\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Om\\CODE\\CP\\Random CF\\C063_Promo.cpp","group":"local","local":true}
