@@ -72,7 +72,7 @@ public:
         // cout << src << " ";
         for (auto neighbour : this->adj[src])
         {
-            if (not visited[neighbour])
+            if (!visited[neighbour])
             {
                 dfsHelper(neighbour, visited);
             }
@@ -92,7 +92,7 @@ public:
 
         for (ll i = 0; i < v; i++)
         {
-            if (not visited[i])
+            if (!visited[i])
             {
                 dfsHelper(i, visited);
                 result++;
