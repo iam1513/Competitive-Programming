@@ -50,27 +50,55 @@ void print_vector_to_debug(vll &nums, ll n)
     cout << "\n";
 }
 
-void merge(ll lo, ll hi, vll &nums)
-{
-    if (lo >= hi)
-    {
-        return;
-    }
-
-    ll mid = lo + (hi - lo) / 2;
-
-    merge(lo, mid , nums);
-    merge(mid + 1, hi, nums);
-}
-
 int main()
 {
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    vll nums = {2, 5, 4, 3, 1};
-    ll n = nums.size();
-    merge(0, n - 1, nums);
+    ll t;
+    cin >> t;
+
+    while (t--)
+    {
+        ll n;
+        cin >> n;
+
+        vll a(n), b(n);
+        take_input_vector(a, n);
+        take_input_vector(b, n);
+
+        bool flag = true;
+
+        for (ll i = n - 2; i >= 0; i--)
+        {
+            if (a[i] == b[i])
+            {
+                continue;
+            }
+            else
+            {
+                if ((a[i] ^ a[i + 1]) != b[i] && (a[i] ^ b[i + 1]) != b[i])
+                {
+                    flag = false;
+                    break;
+                }
+            }
+        }
+
+        if (a[n - 1] != b[n - 1])
+        {
+            flag = false;
+        }
+
+        if (flag)
+        {
+            cout << "YES\n";
+        }
+        else
+        {
+            cout << "NO\n";
+        }
+    }
 
     return 0;
 }

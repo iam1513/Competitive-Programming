@@ -50,27 +50,54 @@ void print_vector_to_debug(vll &nums, ll n)
     cout << "\n";
 }
 
-void merge(ll lo, ll hi, vll &nums)
-{
-    if (lo >= hi)
-    {
-        return;
-    }
-
-    ll mid = lo + (hi - lo) / 2;
-
-    merge(lo, mid , nums);
-    merge(mid + 1, hi, nums);
-}
-
 int main()
 {
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    vll nums = {2, 5, 4, 3, 1};
-    ll n = nums.size();
-    merge(0, n - 1, nums);
+    ll t;
+    cin >> t;
+
+    while (t--)
+    {
+
+        int n;
+        cin >> n;
+
+        string a;
+        cin >> a;
+
+        ll m;
+        cin >> m;
+
+        string b, c;
+        cin >> b >> c;
+
+        deque<char> deq;
+
+        for (auto ch : a)
+        {
+            deq.push_back(ch);
+        }
+
+        for (int i = 0; i < m; i++)
+        {
+            if (c[i] == 'D')
+            {
+                deq.push_back(b[i]);
+            }
+            else
+            {
+                deq.push_front(b[i]);
+            }
+        }
+
+        for (auto ele : deq)
+        {
+            cout << ele;
+        }
+        cout << endl;
+    }
 
     return 0;
 }
