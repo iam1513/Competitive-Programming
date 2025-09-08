@@ -1,0 +1,1 @@
+{"name":"Local: C01","url":"c:\\Users\\Om\\CODE\\CP\\CF Contest\\Div 3\\1047\\C01.cpp","tests":[{"id":1757255834697,"input":"3\n1 4\n1 5\n5 4\n","output":"1\n10\n21\n"},{"id":1757255938246,"input":"1\n1 4","output":"1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Om\\CODE\\CP\\CF Contest\\Div 3\\1047\\C01.cpp","group":"local","local":true}
