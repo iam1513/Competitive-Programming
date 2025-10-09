@@ -60,31 +60,37 @@ int main()
 
     while (t--)
     {
-        ll n;
-        cin >> n;
+        ll a, b;
+        cin >> a >> b;
 
-        if (n == 1)
+        ll x = 0, y = 0;
+        while (a % 2 == 0)
         {
-            cout << "0\n";
+            a /= 2;
+            x++;
+        }
+        while (b % 2 == 0)
+        {
+            b /= 2;
+            y++;
+        }
+
+        if (a != b)
+        {
+            cout << -1 << endl;
             continue;
         }
 
-        ll k = 0;
-        while ((1LL << (k + 1)) < n)
+        ll ans;
+        if (abs(x - y) % 3 == 0)
         {
-            k++;
+            ans = (abs(x - y) / 3);
         }
-        ll x = (1LL << k); 
-
-        for (ll i = x - 1; i >= 0; i--)
+        else
         {
-            cout << i << " ";
+            ans = (abs(x - y) / 3) + 1;
         }
-        for (ll i = x; i < n; i++)
-        {
-            cout << i << " ";
-        }
-        cout << "\n";
+        cout << ans << endl;
     }
 
     return 0;

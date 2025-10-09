@@ -63,28 +63,33 @@ int main()
         ll n;
         cin >> n;
 
-        if (n == 1)
+        vll nums(n);
+        take_input_vector(nums, n);
+
+        mll mp;
+        for (ll i = 0; i < n; i++)
         {
-            cout << "0\n";
-            continue;
+            mp[nums[i]]++;
         }
 
-        ll k = 0;
-        while ((1LL << (k + 1)) < n)
-        {
-            k++;
-        }
-        ll x = (1LL << k); 
+        bool flag = 0;
 
-        for (ll i = x - 1; i >= 0; i--)
+        for (auto ele : mp)
         {
-            cout << i << " ";
+            if (ele.second > 1)
+            {
+                flag = 1;
+            }
         }
-        for (ll i = x; i < n; i++)
+
+        if (flag)
         {
-            cout << i << " ";
+            cout << "YES" << endl;
         }
-        cout << "\n";
+        else
+        {
+            cout << "NO" << endl;
+        }
     }
 
     return 0;

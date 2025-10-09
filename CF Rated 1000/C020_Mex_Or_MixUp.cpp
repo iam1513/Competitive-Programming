@@ -50,6 +50,21 @@ void print_vector_to_debug(vll &nums, ll n)
     cout << "\n";
 }
 
+ll xor_till(ll n)
+{
+    // Determine the remainder of n when divided by 4
+    ll a = n % 4;
+    // Depending on the remainder, return the appropriate XOR value
+    if (a == 0)
+        return n;
+    else if (a == 1)
+        return 1;
+    else if (a == 2)
+        return n + 1;
+    else
+        return 0;
+}
+
 int main()
 {
     ios::sync_with_stdio(false);
@@ -60,31 +75,22 @@ int main()
 
     while (t--)
     {
-        ll n;
-        cin >> n;
+        ll a, b;
+        cin >> a >> b;
 
-        if (n == 1)
+        ll x = xor_till(a - 1);
+        if (x == b)
         {
-            cout << "0\n";
-            continue;
+            cout << a << endl;
         }
-
-        ll k = 0;
-        while ((1LL << (k + 1)) < n)
+        else if ((x ^ b) != a)
         {
-            k++;
+            cout << a + 1 << endl;
         }
-        ll x = (1LL << k); 
-
-        for (ll i = x - 1; i >= 0; i--)
+        else
         {
-            cout << i << " ";
+            cout << a + 2 << endl;
         }
-        for (ll i = x; i < n; i++)
-        {
-            cout << i << " ";
-        }
-        cout << "\n";
     }
 
     return 0;

@@ -1,0 +1,1 @@
+{"name":"Local: C020_Mex_Or_MixUp","url":"c:\\Users\\Om\\CODE\\CP\\CF Rated 1000\\C020_Mex_Or_MixUp.cpp","tests":[{"id":1760015387982,"input":"5\n1 1\n2 1\n2 0\n1 10000\n2 10000\n","output":"3\n2\n3\n2\n3\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Om\\CODE\\CP\\CF Rated 1000\\C020_Mex_Or_MixUp.cpp","group":"local","local":true}

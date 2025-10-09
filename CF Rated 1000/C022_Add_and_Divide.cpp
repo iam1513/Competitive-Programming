@@ -60,31 +60,30 @@ int main()
 
     while (t--)
     {
-        ll n;
-        cin >> n;
+        ll a, b;
+        cin >> a >> b;
 
-        if (n == 1)
+        ll mini = INT_MAX;
+
+        for (ll i = 0; i < 32; i++)
         {
-            cout << "0\n";
-            continue;
+            ll to_divide = b + i;
+            if (to_divide == 1)
+            {
+                continue;
+            }
+            ll temp = a;
+            ll ops = i;
+            while (temp > 0)
+            {
+                temp = temp / to_divide;
+                ops++;
+            }
+
+            mini = min(mini, ops);
         }
 
-        ll k = 0;
-        while ((1LL << (k + 1)) < n)
-        {
-            k++;
-        }
-        ll x = (1LL << k); 
-
-        for (ll i = x - 1; i >= 0; i--)
-        {
-            cout << i << " ";
-        }
-        for (ll i = x; i < n; i++)
-        {
-            cout << i << " ";
-        }
-        cout << "\n";
+        cout << mini << endl;
     }
 
     return 0;
