@@ -60,35 +60,36 @@ int main()
 
     while (t--)
     {
-        ll n, k;
-        cin >> n >> k;
+        ll n;
+        cin >> n;
 
-        vll a(n), b(n);
-        take_input_vector(a, n);
-        take_input_vector(b, n);
+        vll nums(n);
+        take_input_vector(nums, n);
 
-        for (ll i = 1; i < n; i++)
+        sl oofp;
+        for (ll i = 0; i < n; i++)
         {
-            a[i] = a[i] + a[i - 1];
+            if (nums[i] != i)
+            {
+                oofp.insert(i);
+            }
         }
 
-        // print_vector_to_debug(a, n);
-        ll maxi = 1;
-        ll sum = 0;
-        ll ans = 0;
-
-        // cout << "TWO " << endl;
-        for (ll i = 0; i < min(k, n); i++)
+        if (oofp.size() == 0)
         {
-            maxi = max(b[i], maxi);
-            sum = a[i];
-            // cout << "SUM " << sum << endl;
-            ll to_check = sum + ((ll)(k - i - 1) * maxi);
-            // cout << "TO CHECK " << to_check << endl;
-            ans = max(ans, to_check);
+            cout << 0 << endl;
+            continue;
         }
 
-        cout << ans << endl;
+        auto end = oofp.end();
+        end--;
+        ll maxi = *end;
+        for (auto it = oofp.begin(); it != oofp.end(); it++)
+        {
+            maxi &= *it;
+        }
+
+        cout << maxi << endl;
     }
 
     return 0;

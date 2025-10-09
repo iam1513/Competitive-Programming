@@ -60,35 +60,41 @@ int main()
 
     while (t--)
     {
-        ll n, k;
-        cin >> n >> k;
+        ll n;
+        cin >> n;
+        ll l, r;
+        cin >> l >> r;
+        vector<ll> ans; // Vector to store the result array
 
-        vll a(n), b(n);
-        take_input_vector(a, n);
-        take_input_vector(b, n);
-
-        for (ll i = 1; i < n; i++)
+        // Loop through each index from 1 to n
+        bool flag = false;
+        for (ll i = 1; i <= n; i++)
         {
-            a[i] = a[i] + a[i - 1];
+            // Calculate the smallest multiple of i that is >= l
+            ll temp = ((l + i - 1) / i) * i;
+            ans.push_back(temp); // Add the calculated value to the result array
+
+            // If the calculated value exceeds r, no valid array can be formed
+            if (temp > r)
+            {
+                cout << "NO" << endl;
+                flag = true;
+                break;
+            }
         }
 
-        // print_vector_to_debug(a, n);
-        ll maxi = 1;
-        ll sum = 0;
-        ll ans = 0;
-
-        // cout << "TWO " << endl;
-        for (ll i = 0; i < min(k, n); i++)
+        if (flag)
         {
-            maxi = max(b[i], maxi);
-            sum = a[i];
-            // cout << "SUM " << sum << endl;
-            ll to_check = sum + ((ll)(k - i - 1) * maxi);
-            // cout << "TO CHECK " << to_check << endl;
-            ans = max(ans, to_check);
+            continue;
         }
 
-        cout << ans << endl;
+        // If all values are within the range, print "YES" and the array
+        cout << "YES" << endl;
+        for (auto it : ans)
+        {
+            cout << it << " ";
+        }
+        cout << endl;
     }
 
     return 0;

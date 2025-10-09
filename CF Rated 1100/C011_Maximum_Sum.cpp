@@ -63,32 +63,28 @@ int main()
         ll n, k;
         cin >> n >> k;
 
-        vll a(n), b(n);
-        take_input_vector(a, n);
-        take_input_vector(b, n);
-
-        for (ll i = 1; i < n; i++)
+        vll a(n);
+        for (ll i = 0; i < n; i++)
         {
-            a[i] = a[i] + a[i - 1];
+            cin >> a[i];
         }
 
-        // print_vector_to_debug(a, n);
-        ll maxi = 1;
-        ll sum = 0;
+        sort(a.begin(), a.end());
+
         ll ans = 0;
+        vll pr(n + 1, 0);
 
-        // cout << "TWO " << endl;
-        for (ll i = 0; i < min(k, n); i++)
+        for (ll i = 0; i < n; i++)
         {
-            maxi = max(b[i], maxi);
-            sum = a[i];
-            // cout << "SUM " << sum << endl;
-            ll to_check = sum + ((ll)(k - i - 1) * maxi);
-            // cout << "TO CHECK " << to_check << endl;
-            ans = max(ans, to_check);
+            pr[i + 1] = pr[i] + a[i];
         }
 
-        cout << ans << endl;
+        for (ll i = 0; i <= k; i++)
+        {
+            ans = max(ans, pr[n - (k - i)] - pr[2 * i]);
+        }
+
+        cout << ans << "\n";
     }
 
     return 0;
