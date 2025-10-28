@@ -1,0 +1,1 @@
+{"name":"Local: C026_And_0_Big_Sum","url":"c:\\Users\\Om\\CODE\\CP\\CF Rated 1200\\C026_And_0_Big_Sum.cpp","tests":[{"id":1759067493329,"input":"2\n2 2\n100000 20\n","output":"4\n226732710\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Om\\CODE\\CP\\CF Rated 1200\\C026_And_0_Big_Sum.cpp","group":"local","local":true}
